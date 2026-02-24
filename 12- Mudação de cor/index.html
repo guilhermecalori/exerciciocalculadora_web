@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de cor</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    button {
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <h2>Troque sua cor de fundo:</h2>
+
+    <button onclick="mudarCor( 'red')">Vermelho</button>
+    <button onclick="mudarCor( 'blue')">Azul</button>
+    <button onclick="mudarCor( 'green')">Verde</button>
+    <button onclick="mudarCor( 'yellow')">Amarelo</button>
+    <button onclick="mudarCor( 'purple')">Roxo</button>
+    <button onclick="mudarCor( 'orange')">Laranja</button>
+    <button onclick="mudarCor( 'pink')">Rosa</button>
+    <button onclick="mudarCor( 'white')">Branco</button>
+    <button onclick="mudarCor( 'black')">Preto</button>
+    <button onclick="mudarCor( 'gray')">Cinza</button>
+    <button onclick="mudarCor( 'cyan')">Ciano</button>
+    <button onclick="mudarCor( 'magenta')">Magenta</button>
+    <button onclick="mudarCor( 'brown')">Marrom</button>
+
+
+
+<script>
+    function mudarCor(cor) {
+        document.body.style.backgroundColor = cor;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando funções</title>
+</head>
+<body>
+    
+    <h2>Pares</h2>
+
+    <input type="number" id="number" placeholder="Digite o primeiro número aqui">
+    <br><br>
+    <input type="number" id="number2" placeholder="Digite o segundo número aqui">
+    <br><br>
+    <input type="number" id="number3" placeholder="Digite o terceiro número aqui">
+    <br><br>
+    <input type="number" id="number4" placeholder="Digite o quarto número aqui">
+    <br><br>
+    <input type="number" id="number5" placeholder="Digite o quinto número aqui">
+    <br><br>
+
+
+
+    <button onclick="calcularPares()">Calcular Pares</button>
+    <p id="resultado"></p>
+    <br>
+    <br>
+
+    <script>
+        function calcularPares(){
+            let numeros = [];
+            let contadorNumeros = 0;
+            for (let i = 1; i <= 5; i++) {
+                let num = parseInt(document.getElementById(`number${i === 1 ? '' : i}`).value);
+                if (!isNaN(num)) {
+                    numeros[contadorNumeros] = num;
+                    contadorNumeros++;
+                }
+            }
+
+            let pares = [];
+            let contadorPares = 0;
+            for (let i = 0; i < 5; i++) {
+                if (numeros[i] % 2 === 0) {
+                    pares[contadorPares] = numeros[i];
+                    contadorPares++;
+                }
+            }
+            let resultado = '';
+            for (let i = 0; i < contadorPares; i++) {
+                if (i > 0) {
+                    resultado += ', ';
+                }
+                resultado += pares[i];
+            }
+            document.getElementById('resultado').textContent = `Números pares: ${resultado}`;
+        }
+    </script>

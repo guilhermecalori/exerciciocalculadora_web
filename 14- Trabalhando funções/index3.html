@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando funções</title>
+</head>
+<body>
+    
+    <h2>Celsus para Fahrenheit</h2>
+
+    <input type="number" id="number" placeholder="Digite um número aqui">
+    <br><br>
+
+
+    <button onclick="converterCelsiusFahrenheit()">Converter</button>
+    <p id="resultado"></p>
+    <br>
+    <br>
+
+    <script>
+        function calcularFahrenheit(celsius) {
+            return (celsius * 1.8) + 32;
+        }
+
+        function converterCelsiusFahrenheit() {
+            const celsius = parseFloat(document.getElementById('number').value);
+            if (isNaN(celsius)) {
+                document.getElementById('resultado').textContent = 'Por favor, insira um número válido.';
+                return;
+            }
+            const fahrenheit = calcularFahrenheit(celsius);
+            let fahrenheitArredondado = parseInt(fahrenheit * 100 + 0.5) / 100;
+            document.getElementById('resultado').textContent = `${celsius}°C é igual a ${fahrenheitArredondado}°F`;
+        }
+    </script>
+</body>
+</html>

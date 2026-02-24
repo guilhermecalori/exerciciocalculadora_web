@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando funções</title>
+</head>
+<body>
+    
+    <h2>Média</h2>
+
+    <input type="number" id="number" placeholder="Digite a primeira nota aqui">
+    <br><br>
+    <input type="number" id="number2" placeholder="Digite a segunda nota aqui">
+    <br><br>
+    <input type="number" id="number3" placeholder="Digite a terceira nota aqui">
+    <br><br>
+
+
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+    <br>
+    <br>
+
+    <script>
+        function calcularMedia(){
+            let nota1 = parseFloat(document.getElementById('number').value);
+            let nota2 = parseFloat(document.getElementById('number2').value);
+            let nota3 = parseFloat(document.getElementById('number3').value)
+            let media = (nota1 + nota2 + nota3) / 3;
+            let mediaArredondada = parseInt(media * 100 + 0.5) / 100;
+            document.getElementById('resultado').textContent = `A média das notas é: ${mediaArredondada}`;
+        }
+    </script>

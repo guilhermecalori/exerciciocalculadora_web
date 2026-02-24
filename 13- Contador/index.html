@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    button {
+        align-items: center;
+    }
+
+</style>
+<body>
+
+    <h2>Contador:</h2>
+
+    <button onclick="diminuir()">-</button>
+    <span id="contador">0</span>
+    <button onclick="aumentar()">+</button>
+
+</body>
+<script>
+    let contador = 0;
+
+    function aumentar() {
+        contador++;
+        atualizarTela();
+    }
+
+    function diminuir() {
+        contador--;
+        atualizarTela();
+    }
+
+    function atualizarTela() {
+        document.getElementById("contador").textContent = contador;
+    }
+</script>
+</html>
+
