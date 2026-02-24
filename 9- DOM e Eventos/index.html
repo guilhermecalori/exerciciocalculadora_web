@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .card {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #foto {
+            display: none;
+            width: 90vw;
+            height: 90vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão de interação -->
+     <button onclick="mostrarMensagem()" class="btn">Clique aqui</button>
+
+
+     <div class="card">
+        <img id="foto" src="filhovitinhoejulia.png" alt="Foto de Filhovitinho e Júlia" width="200">
+     </div>
+
+<!-- Bloco JavaScript - DOM e Eventos -->
+
+<script>
+    // Função para mostrar a mensagem
+    function mostrarMensagem() {
+        alert("Você clicou no botão e apareceu o melhor casal da sala!");
+        console.log("Você clicou no botão! - Console"); 
+
+        const foto = document.getElementById("foto");
+        foto.style.display = "block"; // Mostrar a imagem
+        foto.src = "filhovitinhoejulia.png"; // Imagem a exibir
+        foto.style.border = "2px solid red"; // Adicione uma borda vermelha à imagem
+    }
+
+    let nome = prompt("Digite seu nome:");
+    let idade = prompt("Digite sua idade:");
+    let cidade = prompt("Digite sua cidade:");
+    let profissao = prompt("Digite sua profissão:");
+    let hobbies = prompt("Digite seu hobbie:");
+
+    alert(`Olá, ${nome}! Você tem ${idade} anos, mora em ${cidade}, trabalha como ${profissao} e seus hobbies são: ${hobbies}.`);
+
+    
+
+
+</script>
+    
+</body>
+</html>
