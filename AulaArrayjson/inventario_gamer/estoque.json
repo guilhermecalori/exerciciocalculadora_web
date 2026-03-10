@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Raquete de beach tennis",
+        "categoria": "Esporte",
+        "preco": 1700,
+        "disponivel": true
+    },
+    {
+        "nome": "Bolinha de beach tennis",
+        "categoria": "Esporte",
+        "preco": 20,
+        "disponivel": true
+    },
+    {
+        "nome": "Raqueteira",
+        "categoria": "Esporte",
+        "preco": 400,
+        "disponivel": true
+    }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreach</title>
+</head>
+<body>
+    <script>
+        console.log('Nomes:');
+        let nomes = ['Ana','Bruno','Carlos','Daniela','Eduardo','Gabriel','Helena'];
+        nomes.forEach(element=>{
+            console.log(element);
+        }
+    );
+    console.log('Nomes que começam com A:');
+    let nomes2 = ['Jonas','Pablo','Arruda','Ana','Carlos','Andrei','Alberto','Marcos'];
+    nomes2.forEach(element=>{
+        let primeiraLetra = element.charAt(0)
+        if(primeiraLetra==="A"){
+        console.log(element);}
+    }
+    );
+    console.log('Números pares:');
+    let numeros = [1,2,3,4,5,6,7,8,9,10];
+    numeros.forEach(element=>{
+        if(element%2===0){
+            console.log(element);
+        }
+    }
+    );
+    console.log('Maiores que 5:');
+    let numeros2=[1,2,3,4,5,6,7,8,9,10];
+    numeros2.forEach(element=>{
+        if(element>5){
+            console.log(element);
+        }
+    }
+    );
+    console.log("Palindromos:");
+    let nomes3 = ['ana', 'bruno', 'carlos','hannah'];
+    nomes3.forEach(element=>{
+        let inverso = element.split("").reverse().join("");
+        if(element===inverso){
+            console.log(element);
+        }
+    }
+    );
+    </script>
+</body>
+</html>
