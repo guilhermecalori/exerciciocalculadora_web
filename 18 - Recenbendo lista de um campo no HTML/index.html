@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!--Campo de interação--> 
+    <h2>Digite 5 nomes</h2>
+
+    <input type="text" id="nome" placeholder="Digite um nome">
+    <button onclick="adicionarNome()">Adicionar</button>
+
+    <p id="info"></p>
+
+    <h3>Lista de nomes:</h3>
+    <ul id="listaNomes"></ul>
+
+    
+   
+
+<!--Bloco JavaScript-->
+
+<script type="text/javascript" src="index.js"></script>
+    <script>
+        let nomes = [];
+
+        function adicionarNome() {
+            let campoNome = document.getElementById("nome");
+            let nomeDigitado = campoNome.value;
+
+            // Validação: não permitir vazio
+            if (nomeDigitado === "") {
+                alert("Digite um nome antes de adicionar!");
+                return;
+            }
+
+            // Limite de 5 nomes
+            if (nomes.length >= 5) {
+                alert("Você já cadastrou 5 nomes!");
+                return;
+            }
+
+            // Adiciona no array
+            nomes.push(nomeDigitado);
+
+            // Mostra no console
+            console.log("Array atualizado:", nomes);
+
+            // Limpa o campo
+            campoNome.value = "";
+
+            // Atualiza a tela
+            atualizarLista();
+        }
+
+        function atualizarLista() {
+            let lista = document.getElementById("listaNomes");
+            let info = document.getElementById("info");
+
+            // Limpa a lista antes de montar novamente
+            lista.innerHTML = "";
+
+            // Atualiza mensagem de quantidade
+            info.innerText = "Nomes cadastrados: " + nomes.length + " / 5";
+
+            // Monta a lista
+            for (let i = 0; i < nomes.length; i++) {
+                let item = document.createElement("li");
+                item.innerText = nomes[i];
+                lista.appendChild(item);
+            }
+        }
+    </script>
+
+</body>
+</html>
