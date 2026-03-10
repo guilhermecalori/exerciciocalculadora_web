@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Enviando lista para um campo no HTML - JavaScript</title>
+    </head>
+    <body>
+        
+        <h2>Nomes Digitados:</h2>
+        <ul id="listaNomes"></ul>
+        <select id="selectNomes"></select>
+
+        <script>
+        
+            let nomes = [];
+                
+            for (let i = 0; i < 3; i++){
+                let nome = prompt("Digite o nome " + (i + 1) + ":");
+                nomes.push(nome);
+            }
+                
+            let lista = document.getElementById("listaNomes");
+
+            for(let i = 0 ; i < nomes.length; i++) {
+                let item = document.createElement("li");
+                item.innerText = nomes[i];
+                lista.appendChild(item);
+            }
+
+            let campoSelect = document.getElementById("selectNomes");
+
+            for(let i = 0 ; i < nomes.length; i++) {
+                let option = document.createElement("option");
+                option.innerText = nomes[i];
+                option.value = nomes[i];
+                campoSelect.appendChild(option);
+            }
+        
+        </script>
+
+    </body>
+</html>
